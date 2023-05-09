@@ -1,4 +1,12 @@
 <div>
-  <h1>Welcome to the Home Page</h1>
-  <button (click)="back()">Back</button>
+  <button class="back-button" (click)="back()">Back</button>
+</div>
+
+<div class="card-container" *ngIf="data$ | async as data">
+  <div class="card" *ngFor="let item of data">
+    <div class="card-header">{{ item.title }}</div>
+    <div class="card-body">
+      <img [src]="item.image" class="card-image" />
+    </div>
+  </div>
 </div>
